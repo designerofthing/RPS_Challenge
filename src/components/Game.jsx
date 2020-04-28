@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Weapons from './Weapons'
 
 export class Game extends Component {
     constructor(props) {
@@ -17,19 +18,23 @@ export class Game extends Component {
         this.setState({
             message: "Let's get ready to rumble!", 
             message2: "Please choose your weapon, rock, paper or scissors",
+            dropDown: <Weapons />,
             title: "",
             shouldShowButton: 'hidden'
+            
         }); 
       }
     render() {
         return (
             <div>
                 <h1>{this.state.title}</h1>
-                <button onClick={this.Gamestart}
+                <button id='start' onClick={this.Gamestart}
                 style={{visibility: this.state.shouldShowButton}}>{this.state.buttonText}</button>
                     {this.state.clicked}
                 <h2>{this.state.message}</h2>
                 <h2>{this.state.message2}</h2>
+                <p>{this.state.dropDown}</p>
+                
             </div>
         )
     }
