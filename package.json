@@ -44,6 +44,7 @@
     "cypress": "^4.4.1",
     "start-server-and-test": "^1.11.0",
     "style-loader": "0.23.0",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack-dev-server": "3.10.3"
   }
 }
