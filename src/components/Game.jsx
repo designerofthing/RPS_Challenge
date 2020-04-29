@@ -33,7 +33,7 @@ export class Game extends Component {
                     {this.state.clicked}
                 <h2>{this.state.message}</h2>
                 <h2>{this.state.message2}</h2>
-                <p>{this.state.dropDown}</p>
+                <div>{this.state.dropDown}</div>
                 
             </div>
         )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class Weapons extends Component {
     constructor() {
         super();
@@ -21,9 +22,9 @@ class Weapons extends Component {
     }
 
     closeWeapons(event) {
-      if (!this.dropdownMenu.contains(event.target)) {
-
-      this.setState({ showWeapons: false}, () => {
+      if (!event.target.closest('#weapon')) {
+       
+      this.setState({ showWeapons: false }, () => {
         document.removeEventListener('click', this.closeWeapons);
       });
      }
@@ -32,21 +33,19 @@ class Weapons extends Component {
     render() {
         return (
             <div>
-                <button  onClick={this.showWeapons}> 
+                <button onClick={this.showWeapons}> 
                     Show Weapons
                 </button>
-
+                
                 {
                 this.state.showWeapons
                 ? (
                   <div id='weapon' className="menu"
-                  ref={(element) => {
-                    this.dropdownMenu = element;
-                  }}
+                  
                   >
-                    <button>Rock</button>
-                    <button>Paper</button>
-                    <button>Scissors</button>
+                    <p>Rock</p>
+                    <p>Paper</p>
+                    <p>Scissors</p>
                   </div>
                 )
                 : (null)
@@ -55,5 +54,6 @@ class Weapons extends Component {
         );
     }
 }
+
 
 export default Weapons;
