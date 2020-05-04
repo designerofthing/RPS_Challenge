@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import Rock from '../modules/Rock';
+import Scissors from '../modules/Scissors';
+import Paper from '../modules/Paper';
+
 
 
 class Weapons extends Component {
@@ -7,10 +11,12 @@ class Weapons extends Component {
 
         this.state = {
             showWeapons: false,
+            userWeapon: ''
         }
 
         this.showWeapons = this.showWeapons.bind(this);
         this.closeWeapons = this.showWeapons.bind(this);
+  
     }
 
     showWeapons(event) {
@@ -29,8 +35,14 @@ class Weapons extends Component {
       });
      }
     }
-
+    userWeapon(event) {
+      event.preventDefault();
+      this.setState({userWeapon: true }, () => {
+        document.addEventListener('click', this.userWeapon)
+      })
+    }
     render() {
+    
         return (
             <div>
                 <button onClick={this.showWeapons}> 
@@ -43,9 +55,9 @@ class Weapons extends Component {
                   <div id='weapon' className="menu"
                   
                   >
-                    <p>Rock</p>
-                    <p>Paper</p>
-                    <p>Scissors</p>
+                    <Rock onClick={this.state.userWeapon = Rock} >Rock</Rock>
+                    <Paper onClick={this.state.userWeapon=Paper} >Rock</Paper>
+                    <Scissors onClick={this.state.userWeapon=Scissors} >Rock</Scissors>
                   </div>
                 )
                 : (null)
