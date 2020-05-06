@@ -57,11 +57,11 @@ class Weapons extends Component {
                   
                   >
                    <Rock />
-                   <button onClick={this.handleClick}id='rock'>Rock</button>
+                   {/* <button onClick={this.handleClick}id='rock'>Rock</button> */}
                    <Paper />
-                   <button onClick={this.handleClick} id='paper'>Paper</button>
+                   {/* <button onClick={this.handleClick} id='paper'>Paper</button> */}
                    <Scissors />
-                   <button onClick={this.handleClick} id='scissors'>Scissors</button> 
+                   {/* <button onClick={this.handleClick} id='scissors'>Scissors</button>  */}
                     
                   </div>
                 )
