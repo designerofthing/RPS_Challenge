@@ -1,23 +1,27 @@
 import React from 'react';
 import Game from './Game';
 import Weapons from './Weapons';
-import Rock from '../modules/Rock'
+
+
 
 class App extends React.Component {
 	constructor(props) {
 		super(props)
-		this.weapons = ["rock" , "paper", "scissors"]
-		this.state = {}
+    this.weapons = ['rock', 'paper', 'scissors']
+    this.setUserWeapon = ''
+    this.state = {
+     
 	}
-
+	
+  }
 	outcome = ()=> {
-		const {userWeapon, opponent} = this.state
-		if(userWeapon == opponent) {
+		const {opponent} = this.state
+		if(this.setUserWeapon === opponent) {
 			return "It's a draw !"
 		}
-		if((userWeapon==="rock" && opponent==="scissors") ||
-			(userWeapon==="paper" && opponent==="rock") ||
-			(userWeapon==="scissors" && opponent==="paper")) {
+		if((this.userWeapon==="rock" && opponent==="scissors") ||
+			(this.userWeapon==="paper" && opponent==="rock") ||
+			(this.userWeapon==="scissors" && opponent==="paper")) {
 			return "You win!"
 		}
 		return "You lose!"
@@ -28,7 +32,7 @@ class App extends React.Component {
 		let myInterval = setInterval(() => {
 			counter++
 			this.setState({
-				user: this.userWeapon,
+				user: this.setUserWeapon,
 				opponent: this.weapons[Math.floor(Math.random()*3)],
 				winner: ""
 			})
@@ -37,17 +41,21 @@ class App extends React.Component {
 				this.setState({winner: this.outcome()})
 			}
 		},100)
-	}
+  }
+
 
   render() {
-		return (
+    
+		return ( 
       <>
-      <Game />
-			<div className="App">
-       	User Weapon={this.state.userWeapon} />   
-				Opponent Weapon={this.state.opponent}   />
+         <Game /> 
+         
+			<div className='App'>
+        <Weapons />
+        {this.userWeapon}
+			  {this.state.opponent}
 				<p>{this.state.winner}</p>
-				<button onClick={this.runGame}>Run game</button>
+				<button onClick={this.runGame}>Play game</button>
 			</div>
       </>
 		);

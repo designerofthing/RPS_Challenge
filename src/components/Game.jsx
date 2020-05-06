@@ -18,7 +18,6 @@ export class Game extends Component {
         this.setState({
             message: "Let's get ready to rumble!", 
             message2: "Please choose your weapon, rock, paper or scissors",
-            dropDown: <Weapons />,
             title: "",
             shouldShowButton: 'hidden'
             
@@ -26,7 +25,7 @@ export class Game extends Component {
       }
     render() {
         return (
-            <div>
+            <div style={{ textAlign: 'center'}}>
                 <h1>{this.state.title}</h1>
                 <button id='start' onClick={this.Gamestart}
                 style={{visibility: this.state.shouldShowButton}}>{this.state.buttonText}</button>

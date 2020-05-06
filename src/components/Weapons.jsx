@@ -11,16 +11,17 @@ class Weapons extends Component {
 
         this.state = {
             showWeapons: false,
-            userWeapon: ''
-        }
+            setUserWeapon: '' 
+          }
 
         this.showWeapons = this.showWeapons.bind(this);
         this.closeWeapons = this.showWeapons.bind(this);
-  
+       
     }
 
     showWeapons(event) {
       event.preventDefault();
+     
 
       this.setState({ showWeapons: true }, () => {
         document.addEventListener('click', this.closeWeapons);
@@ -33,20 +34,20 @@ class Weapons extends Component {
       this.setState({ showWeapons: false }, () => {
         document.removeEventListener('click', this.closeWeapons);
       });
+      
      }
     }
-    userWeapon(event) {
-      event.preventDefault();
-      this.setState({userWeapon: true }, () => {
-        document.addEventListener('click', this.userWeapon)
-      })
-    }
-    render() {
     
+      handleClick(event) {
+       this.setState.setUserWeapon('event.target.id')
+    }
+
+    render() {
+
         return (
             <div>
                 <button onClick={this.showWeapons}> 
-                    Show Weapons
+                    Weapons
                 </button>
                 
                 {
@@ -55,9 +56,13 @@ class Weapons extends Component {
                   <div id='weapon' className="menu"
                   
                   >
-                    <Rock onClick={this.state.userWeapon = Rock} >Rock</Rock>
-                    <Paper onClick={this.state.userWeapon=Paper} >Rock</Paper>
-                    <Scissors onClick={this.state.userWeapon=Scissors} >Rock</Scissors>
+                   <Rock />
+                   <button onClick={this.handleClick}id='rock'>Rock</button>
+                   <Paper />
+                   <button onClick={this.handleClick} id='paper'>Paper</button>
+                   <Scissors />
+                   <button onClick={this.handleClick} id='scissors'>Scissors</button> 
+                    
                   </div>
                 )
                 : (null)
@@ -65,7 +70,7 @@ class Weapons extends Component {
             </div>
         );
     }
-}
+  }
 
 
 export default Weapons;
