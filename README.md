@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Rock Paper Scissors App
 
 ## About this project
-It is a single page web application allowing the user to try and beat the computer at Rock Paper Scissors but always failing.  It is a statement for the future futility of the puny humans against the might machines.
+It is a single page web application allowing the user to try and beat the computer at Rock Paper Scissors but always failing.  It is a statement for the future futility of the puny humans against the mighty machines.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 The project also uses custom CSS for styling.
