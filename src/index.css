@@ -14,3 +14,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  color: red;
+  font-size: 50px;
+  font-family: 'Righteous', cursive;
+}
+h2 {
+  color: red;
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+}
+p {
+  color: red;
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+}
+
+.App {
+  padding-top: 100px;
+  position: relative;
+  text-align: center;
+  color: red;
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+}

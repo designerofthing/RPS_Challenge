@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import rock from '../images/rock.png';
 
+
 function Rock(params) {
-    return <img src={rock} alt='rock'/>;
+
+  const [userWeapon, setUserWeapon] = useState('')
+
+  function handleClick() {
+    setUserWeapon('rock')
+  }
+    return (
+      <>
+    <img  src={rock} alt='rock'/>
     
+    </>
+    );
 }
 
 export default Rock;
