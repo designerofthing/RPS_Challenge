@@ -114,7 +114,7 @@ playGame = () => {
         <p id='opponent-weapon' style={{visibility: this.state.shouldShowPlayButton}}>Opponent Weapon:<br/>
         {this.state.opponent}
         </p>
-				<p style={{visibility: this.state.playAgain}}>{this.state.winner}<br/>
+				<p id='outcome' style={{visibility: this.state.playAgain}}>{this.state.winner}<br/>
         Click Play to Play Again</p>
         
       </div>
