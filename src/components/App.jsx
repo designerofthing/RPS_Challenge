@@ -28,7 +28,7 @@ export default class App extends Component {
     }); 
   }
 PickWeapon = () => {
-  this.weaponChoice = prompt('Please choose your weapon: rock, paper or scissors:');
+  this.weaponChoice = prompt('Please choose your weapon: rock, paper or scissors:').toLowerCase();
   if (this.weaponChoice === 'rock') {
     this.setState({
       textWeapon: "Rock",
@@ -107,7 +107,7 @@ playGame = () => {
         <button id='weapon' onClick={this.PickWeapon}style={{visibility: this.state.shouldShowPickWeaponButton}}>Pick Weapon</button><br/>
         <button id='play' onClick={this.playGame}style={{visibility: this.state.shouldShowPlayButton}}>Play</button>
 
-        <p id='text-weapon' style={{visibility: this.state.shouldShowPlayButton}}>Your Weapon:<br/>
+        <p id='text-weapon' style={{visibility: this.state.shouldShowWeaponImage}}>Your Weapon:<br/>
         {this.state.textWeapon}
         </p>
 
