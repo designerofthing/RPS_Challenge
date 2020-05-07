@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import rock from '../images/rock.png';
 
 
 function Rock(params) {
 
-  const [userWeapon, setUserWeapon] = useState('')
-
-  function handleClick() {
-    setUserWeapon('rock')
-  }
-    return (
+   return (
       <>
     <img  src={rock} alt='rock'/>
     
