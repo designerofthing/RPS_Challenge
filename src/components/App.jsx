@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Rock from '../modules/Rock';
+
 
 export default class App extends Component {
   constructor(props){
@@ -115,16 +115,23 @@ playGame = () => {
        
         <button id='weapon' onClick={this.PickWeapon}style={{visibility: this.state.shouldShowPickWeaponButton}}>Pick Weapon</button><br/>
         <button id='play' onClick={this.playGame}style={{visibility: this.state.shouldShowPlayButton}}>Play</button>
-
+        <div id='battle'>
+        <div id='left'>
         <p id='text-weapon' style={{visibility: this.state.shouldShowWeaponImage}}>Your Weapon:<br/>
         {this.state.textWeapon}
         </p>
-
+        </div>
+        <div id='centre'>
+        <p id='outcome' style={{visibility: this.state.playAgain}}>{this.state.winner}<br/>
+        Click Play to Play Again</p>
+        </div>
+        <div id='right'>
         <p id='opponent-weapon' style={{visibility: this.state.shouldShowPlayButton}}>Opponent Weapon:<br/>
         {this.state.opponent}
         </p>
-				<p id='outcome' style={{visibility: this.state.playAgain}}>{this.state.winner}<br/>
-        Click Play to Play Again</p>
+        </div>
+        </div>
+				
         
       </div>
     )
