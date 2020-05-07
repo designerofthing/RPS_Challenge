@@ -13,6 +13,7 @@ export default class App extends Component {
             shouldShowPlayButton: 'hidden',
             textWeapon: '',
             shouldShowWeaponImage: 'hidden',
+            playAgain: 'hidden'
             
   }
   }
@@ -81,7 +82,10 @@ playGame = () => {
     })
     if(counter > 20) {
       clearInterval(myInterval)
-      this.setState({winner: this.outcome()})
+      this.setState({
+        winner: this.outcome(),
+        playAgain: 'visible'
+      })
     }
   },100)
   
@@ -100,12 +104,18 @@ playGame = () => {
                 <h2>{this.state.message}</h2>
                 <h2>{this.state.message2}</h2>
        
-        <button id='weapon' onClick={this.PickWeapon}style={{visibility: this.state.shouldShowPickWeaponButton}}>Pick Weapon</button>
+        <button id='weapon' onClick={this.PickWeapon}style={{visibility: this.state.shouldShowPickWeaponButton}}>Pick Weapon</button><br/>
         <button id='play' onClick={this.playGame}style={{visibility: this.state.shouldShowPlayButton}}>Play</button>
 
-        <p id='text-weapon'>{this.state.textWeapon}</p> 
-        <p>{this.state.opponent}</p>
-				<p>{this.state.winner}</p>
+        <p id='text-weapon' style={{visibility: this.state.shouldShowPlayButton}}>Your Weapon:<br/>
+        {this.state.textWeapon}
+        </p>
+
+        <p id='opponent-weapon' style={{visibility: this.state.shouldShowPlayButton}}>Opponent Weapon:<br/>
+        {this.state.opponent}
+        </p>
+				<p style={{visibility: this.state.playAgain}}>{this.state.winner}<br/>
+        Click Play to Play Again</p>
         
       </div>
     )
