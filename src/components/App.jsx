@@ -103,7 +103,7 @@ playGame = () => {
         <button id='weapon' onClick={this.PickWeapon}style={{visibility: this.state.shouldShowPickWeaponButton}}>Pick Weapon</button>
         <button id='play' onClick={this.playGame}style={{visibility: this.state.shouldShowPlayButton}}>Play</button>
 
-        <p>{this.state.textWeapon}</p> 
+        <p id='text-weapon'>{this.state.textWeapon}</p> 
         <p>{this.state.opponent}</p>
 				<p>{this.state.winner}</p>
         
