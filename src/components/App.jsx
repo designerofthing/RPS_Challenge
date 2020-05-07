@@ -50,7 +50,15 @@ PickWeapon = () => {
       shouldShowPickWeaponButton: 'hidden',
       shouldShowWeaponImage: 'visible'
     }) 
-  } else 
+  } else if (this.weaponChoice === 'spock'){
+    this.setState({
+      textWeapon: "Spock",
+      shouldShowPlayButton: 'visible',
+      shouldShowPickWeaponButton: 'hidden',
+      shouldShowWeaponImage: 'visible'
+    }) 
+  }
+  else 
   this.setState({
     textWeapon: "Who brings a knife to a gun fight? Choose again.",
     shouldShowPlayButton: 'hidden',
@@ -65,7 +73,8 @@ outcome = ()=> {
   }
   if((textWeapon==="Rock" && opponent==="Scissors") ||
     (textWeapon==="Paper" && opponent==="Rock") ||
-    (textWeapon==="Scissors" && opponent==="Paper")) {
+    (textWeapon==="Scissors" && opponent==="Paper")||
+    textWeapon==="Spock") {
     return "You win!"
   }
   return "You lose!"
