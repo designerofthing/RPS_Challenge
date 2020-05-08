@@ -30,6 +30,7 @@ Built with the guidance of the Craft Academy documentation, Reactjs.org, and Sta
 Some tutorials from the App Brewery London and JS Craft.
 
 ## Improvments
+- Add images to replace weapon texts.
 - Add sound with React Player.
 - Link to a database to keep score history.
 
