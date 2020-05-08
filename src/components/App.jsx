@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import Rock from '../modules/Rock';
+import Paper from '../modules/Paper';
+import Scissors from '../modules/Scissors';
+import Spock from '../modules/Spock';
+
 
 export default class App extends Component {
   constructor(props) {
@@ -11,6 +16,7 @@ export default class App extends Component {
       shouldShowPickWeaponButton: "hidden",
       shouldShowPlayButton: "hidden",
       textWeapon: "",
+      opponentImage: "",
       shouldShowWeaponImage: "hidden",
       playAgain: "hidden",
     };
@@ -31,6 +37,7 @@ export default class App extends Component {
     if (this.weaponChoice.toLowerCase() === "rock") {
       this.setState({
         textWeapon: "Rock",
+        weaponImage: <Rock />,
         shouldShowPlayButton: "visible",
         shouldShowPickWeaponButton: "hidden",
         shouldShowWeaponImage: "visible",
@@ -38,6 +45,7 @@ export default class App extends Component {
     } else if (this.weaponChoice.toLowerCase() === "paper") {
       this.setState({
         textWeapon: "Paper",
+        weaponImage: <Paper />,
         shouldShowPlayButton: "visible",
         shouldShowPickWeaponButton: "hidden",
         shouldShowWeaponImage: "visible",
@@ -45,6 +53,7 @@ export default class App extends Component {
     } else if (this.weaponChoice.toLowerCase() === "scissors") {
       this.setState({
         textWeapon: "Scissors",
+        weaponImage: <Scissors />,
         shouldShowPlayButton: "visible",
         shouldShowPickWeaponButton: "hidden",
         shouldShowWeaponImage: "visible",
@@ -52,6 +61,7 @@ export default class App extends Component {
     } else if (this.weaponChoice.toLowerCase() === "spock") {
       this.setState({
         textWeapon: "Spock",
+        weaponImage: <Spock />,
         shouldShowPlayButton: "visible",
         shouldShowPickWeaponButton: "hidden",
         shouldShowWeaponImage: "visible",
@@ -88,7 +98,20 @@ export default class App extends Component {
         textWeapon: this.state.textWeapon,
         opponent: this.weapons[Math.floor(Math.random() * 3)],
         winner: "",
-      });
+      }); 
+      if (this.state.opponent === 'Rock'){
+        this.setState({
+          opponentImage: <Rock />
+        })
+      } else if (this.state.opponent === 'Paper'){
+        this.setState({
+          opponentImage: <Paper />
+        })
+      } else if (this.state.opponent === 'Scissors'){
+        this.setState({
+          opponentImage: <Scissors />
+        })
+      }
       if (counter > 20) {
         clearInterval(myInterval);
         this.setState({
@@ -136,7 +159,9 @@ export default class App extends Component {
               style={{ visibility: this.state.shouldShowWeaponImage }}
             >
               Your Weapon:
-              <br />
+              <br/>
+              {this.state.weaponImage}
+              <br/>
               {this.state.textWeapon}
             </p>
           </div>
@@ -150,10 +175,12 @@ export default class App extends Component {
           <div id="right">
             <p
               id="opponent-weapon"
-              style={{ visibility: this.state.shouldShowPlayButton }}
+              style={{ visibility: this.state.shouldShowWeaponImage }}
             >
               Opponent Weapon:
-              <br />
+              <br/>
+              {this.state.opponentImage}
+              <br/>
               {this.state.opponent}
             </p>
           </div>
