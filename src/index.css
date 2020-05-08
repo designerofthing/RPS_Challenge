@@ -39,3 +39,26 @@ p {
   font-size: 40px;
   font-family: 'Righteous', cursive;
 }
+#battle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+#left {
+  text-align: center;
+}
+#centre {
+  text-align: center;
+}
+
+#right { 
+  text-align: center;
+}
+
+button {
+  background-color: gold;
+  color: red;
+  font-size: 40px;
+  font-family: 'Righteous', cursive;
+  border-radius: 5px;
+}

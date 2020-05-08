@@ -1,12 +1,12 @@
 import React from 'react';
-import rock from '../images/rock.png';
+import Rock from '../images/Rock.png';
 
 
 function Rock(params) {
 
    return (
       <>
-    <img  src={rock} alt='rock'/>
+    <img  src={Rock} alt='rock'/>
     
     </>
     );
