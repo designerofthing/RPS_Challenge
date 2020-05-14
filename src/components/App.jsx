@@ -3,15 +3,16 @@ import Rock from '../modules/Rock';
 import Paper from '../modules/Paper';
 import Scissors from '../modules/Scissors';
 import Spock from '../modules/Spock';
+import GameStart from "./GameStart";
+import PickWeapon from "./PickWeapon"
 
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.weapons = ["Rock", "Paper", "Scissors"];
     this.state = {
       startButtonText: "Click to start the game!",
-      title: "Rock Paper Scissors",
       shouldShowStartButton: "visible",
       shouldShowPickWeaponButton: "hidden",
       shouldShowPlayButton: "hidden",
@@ -21,59 +22,7 @@ export default class App extends Component {
       playAgain: "hidden",
     };
   }
-  Gamestart = () => {
-    this.setState({
-      message: "Let's get ready to rumble!",
-      message2: "Please choose your weapon, rock, paper or scissors",
-      title: "",
-      shouldShowStartButton: "hidden",
-      shouldShowPickWeaponButton: "visible",
-    });
-  };
-  PickWeapon = () => {
-    this.weaponChoice = prompt(
-      "Please choose your weapon: rock, paper or scissors:"
-    );
-    if (this.weaponChoice.toLowerCase() === "rock") {
-      this.setState({
-        textWeapon: "Rock",
-        weaponImage: <Rock />,
-        shouldShowPlayButton: "visible",
-        shouldShowPickWeaponButton: "hidden",
-        shouldShowWeaponImage: "visible",
-      });
-    } else if (this.weaponChoice.toLowerCase() === "paper") {
-      this.setState({
-        textWeapon: "Paper",
-        weaponImage: <Paper />,
-        shouldShowPlayButton: "visible",
-        shouldShowPickWeaponButton: "hidden",
-        shouldShowWeaponImage: "visible",
-      });
-    } else if (this.weaponChoice.toLowerCase() === "scissors") {
-      this.setState({
-        textWeapon: "Scissors",
-        weaponImage: <Scissors />,
-        shouldShowPlayButton: "visible",
-        shouldShowPickWeaponButton: "hidden",
-        shouldShowWeaponImage: "visible",
-      });
-    } else if (this.weaponChoice.toLowerCase() === "spock") {
-      this.setState({
-        textWeapon: "Spock",
-        weaponImage: <Spock />,
-        shouldShowPlayButton: "visible",
-        shouldShowPickWeaponButton: "hidden",
-        shouldShowWeaponImage: "visible",
-      });
-    } else
-      this.setState({
-        textWeapon: "Who brings a knife to a gun fight? Choose again.",
-        shouldShowPlayButton: "hidden",
-        shouldShowPickWeaponButton: "visible",
-        shouldShowWeaponImage: "visible",
-      });
-  };
+ 
   outcome = () => {
     const { textWeapon, opponent } = this.state;
     if (textWeapon === opponent) {
@@ -125,25 +74,8 @@ export default class App extends Component {
   render() {
     return (
       <div style={{ textAlign: "center" }}>
-        <h1>{this.state.title}</h1>
-        <button
-          id="start"
-          onClick={this.Gamestart}
-          style={{ visibility: this.state.shouldShowStartButton }}
-        >
-          {this.state.startButtonText}
-        </button>
-        {this.state.clicked}
-        <h2>{this.state.message}</h2>
-        <h2>{this.state.message2}</h2>
-
-        <button
-          id="weapon"
-          onClick={this.PickWeapon}
-          style={{ visibility: this.state.shouldShowPickWeaponButton }}
-        >
-          Pick Weapon
-        </button>
+        <GameStart />
+       <PickWeapon />
         <br />
         <button
           id="play"
@@ -189,3 +121,4 @@ export default class App extends Component {
     );
   }
 }
+export default App;
