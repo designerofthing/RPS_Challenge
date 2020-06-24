@@ -30,8 +30,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Built with the guidance of the Craft Academy documentation, Reactjs.org, and Stackoverflow.
 Some tutorials from the App Brewery London and JS Craft.
 
-## Improvments
-- Add images to replace weapon texts.
+## Improvements
 - Add sound with React Player.
 - Link to a database to keep score history.
 
