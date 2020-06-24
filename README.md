@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5d7cf89e-956c-45fb-b711-a1e831aed274/deploy-status)](https://app.netlify.com/sites/steverpsgame/deploys)
 # Rock Paper Scissors App
 
 ## About this project
